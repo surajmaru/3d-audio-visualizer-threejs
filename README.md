@@ -21,5 +21,5 @@
 git clone git@github.com:surajmaru/3d-audio-visualizer-threejs.git
 npm install
 npx vite
-Ka-boom
+open local host
 
