@@ -14,7 +14,7 @@
 - THREE JS
 - Javascript
 - WebGLRenderer
-- THREE JS's apis
+- THREE JS audio apis
 
 ## Quick setup:
 ```bash
