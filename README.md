@@ -17,8 +17,9 @@
 - THREE JS's apis
 
 ## Quick setup:
-- git clone git@github.com:surajmaru/3d-audio-visualizer-threejs.git
-- npm install
-- npx vite
-- Ka-boom
+```bash
+git clone git@github.com:surajmaru/3d-audio-visualizer-threejs.git
+npm install
+npx vite
+Ka-boom
 
