@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>My first three.js app</title>
+    <style>
+      body {
+        margin: 0;
+        user-select: none;
+      }
+    </style>
+    <link href="./index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="absolute top-5 left-5 z-10">
+      <input type="file" accept="audio/*" id="audioInput" class="hidden" />
+
+      <label
+        for="audioInput"
+        class="inline-flex items-center gap-2 px-5 py-3 backdrop-blur-md border border-white/20 rounded-xl text-white font-medium cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95"
+      >
+        <span id="fileText">Choose a file</span>
+      </label>
+
+      <h2
+        id="play"
+        class="inline-flex items-center gap-2 px-5 py-3 backdrop-blur-md border border-white/20 rounded-xl text-white font-medium cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95"
+      >
+        PLAY
+      </h2>
+    </div>
+
+    <div
+      class="absolute top-5 right-5 z-10 flex flex-col justify-center items-center gap-10"
+    >
+      <div
+        class="flex flex-col items-center justify-center gap-2 slider-div border border-white/20 p-5 rounded-2xl w-full]"
+      >
+        <h2 class="text-white">Audio Controls</h2>
+        <div class="flex justify-between items-center w-full gap-5">
+          <p class="text-white m-0 p-0 text-sm">BASS</p>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.2"
+            id="bassSlider"
+            class="custom-slider"
+          />
+        </div>
+        <div class="flex justify-between items-center w-full gap-5">
+          <p class="text-white m-0 p-0 text-sm">MID</p>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.2"
+            id="midSlider"
+            class="custom-slider"
+          />
+        </div>
+        <div class="flex justify-between items-center w-full gap-5">
+          <p class="text-white m-0 p-0 text-sm">TREBLE</p>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.3"
+            id="trebleSlider"
+            class="custom-slider"
+          />
+        </div>
+        <div class="flex justify-between items-center w-full gap-5">
+          <p class="text-white m-0 p-0 text-sm">Volume</p>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value="1"
+            id="volumeSlider"
+            class="custom-slider"
+          />
+        </div>
+        <div class="flex justify-between items-center w-full gap-5">
+          <p class="text-white m-0 p-0 text-sm">Sensitivity</p>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.4"
+            id="sensitivitySlider"
+            class="custom-slider"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="absolute top-1/2 left-50 transform -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col justify-center gap-5"
+    >
+      <h1 class="text-6xl text-white font-bold">Visualise <br />your music.</h1>
+      <h2 class="text-white text-lg">THREE JS - JAVASCRIPT - WEBGL</h2>
+    </div>
+
+    <div class="absolute bottom-5 left-5 z-10 text-white">
+      <h1>
+        Creator:
+        <a
+          href="https://surajthedev.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Suraj Maru</a
+        >
+      </h1>
+    </div>
+
+    <div>
+      <progress
+        id="progressBar"
+        start="0"
+        value="0"
+        max="1"
+        class="absolute bottom-5 left-1/2 transform -translate-x-1/2 w-1/2 h-2 rounded-full"
+      />
+    </div>
+    <!-- <script type="module" src="./scripts/rotating-cube.js"></script> -->
+    <!-- <script type="module" src="./scripts/drawing-lines.js"></script> -->
+    <script type="module" src="./scripts/audio-reactive-sphere.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </body>
+</html>

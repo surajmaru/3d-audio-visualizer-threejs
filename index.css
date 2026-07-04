@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+#info {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+  display: block;
+  color: white;
+}
+
+/* Base input strip */
+.custom-slider {
+  -webkit-appearance: none; /* Override default styling */
+  appearance: none;
+  width: 160px;
+  height: 2px; /* Track thickness */
+  background: #ddd; /* Track background color */
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Thumb/Handle styling for Chrome, Safari, Opera, and Edge */
+.custom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white; /* Main handle color */
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+/* Hover effect on the handle */
+.custom-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2); /* Pop effect */
+  background: gray;
+}
+
+/* Thumb/Handle styling for Firefox */
+.custom-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50%;
+  background: gray;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.custom-slider::-moz-range-thumb:hover {
+  transform: scale(1.2);
+}
+
+/*  */
+
+/* Remove default appearance */
+#progressBar {
+  appearance: none;
+  -webkit-appearance: none;
+  /* width: 50%; */
+  height: 10px;
+}
+
+/* Background (track) */
+#progressBar::-webkit-progress-bar {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+}
+
+/* Filled part */
+#progressBar::-webkit-progress-value {
+  /* background: #00e5ff; */
+  background: white;
+  border-radius: 999px;
+}
+
+/* Firefox */
+#progressBar::-moz-progress-bar {
+  background: white;
+  border-radius: 999px;
+}
