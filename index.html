@@ -16,19 +16,21 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
-    <div class="absolute md:top-5 md:left-5 top-6/32 left-0 z-10">
+    <div
+      class="absolute md:top-5 md:left-5 top-6/32 left-0 z-10 flex md:flex-row flex-col md:gap-5 gap-2"
+    >
       <input type="file" accept="audio/*" id="audioInput" class="hidden" />
 
       <label
         for="audioInput"
-        class="inline-flex items-center md:px-5 md:py-3 text-md text-sm p-2 backdrop-blur-md border border-white/20 rounded-xl text-white font-medium cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95"
+        class="inline-flex items-center md:px-5 md:py-3 md:text-md text-sm p-2 backdrop-blur-md border border-white/20 rounded-xl text-white font-medium cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95"
       >
         <span id="fileText">Choose a file</span>
       </label>
 
       <h2
         id="play"
-        class="inline-flex items-center md:px-5 md:py-3 text-md p-2 text-sm backdrop-blur-md border border-white/20 rounded-xl text-white font-medium cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95"
+        class="inline-flex items-center justify-center md:px-5 md:py-3 md:text-md p-2 text-sm backdrop-blur-md border border-white/20 rounded-xl text-white font-medium cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95"
       >
         PLAY
       </h2>
@@ -107,10 +109,10 @@
     <div
       class="absolute md:top-[40%] md:left-10 top-5 z-10 flex flex-col justify-center gap-5"
     >
-      <h1 class="text-4xl md:text-6xl text-white font-bold">
+      <h1 class="text-2xl md:text-6xl text-white font-bold">
         Visualise <br />your music.
       </h1>
-      <h2 class="text-white ms:text-lg text-sm">
+      <h2 class="text-white ms:text-lg text-xs font-medium">
         THREE JS - JAVASCRIPT - WEBGL
       </h2>
     </div>
