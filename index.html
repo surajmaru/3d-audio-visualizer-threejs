@@ -5,6 +5,7 @@
     <title>Responsive Audio - THREE JS</title>
     <link rel="icon" type="image/jpeg" href="./logo/logo2.jpg" />
     <meta name="description" content="My first three.js app" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       body {
         margin: 0;
@@ -12,31 +13,32 @@
       }
     </style>
     <link href="./index.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
-    <div class="absolute top-5 left-5 z-10">
+    <div class="absolute md:top-5 md:left-5 top-6/32 left-0 z-10">
       <input type="file" accept="audio/*" id="audioInput" class="hidden" />
 
       <label
         for="audioInput"
-        class="inline-flex items-center gap-2 px-5 py-3 backdrop-blur-md border border-white/20 rounded-xl text-white font-medium cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95"
+        class="inline-flex items-center md:px-5 md:py-3 text-md text-sm p-2 backdrop-blur-md border border-white/20 rounded-xl text-white font-medium cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95"
       >
         <span id="fileText">Choose a file</span>
       </label>
 
       <h2
         id="play"
-        class="inline-flex items-center gap-2 px-5 py-3 backdrop-blur-md border border-white/20 rounded-xl text-white font-medium cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95"
+        class="inline-flex items-center md:px-5 md:py-3 text-md p-2 text-sm backdrop-blur-md border border-white/20 rounded-xl text-white font-medium cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95"
       >
         PLAY
       </h2>
     </div>
 
     <div
-      class="absolute top-5 right-5 z-10 flex flex-col justify-center items-center gap-10"
+      class="absolute md:top-5 top-0 md:right-5 right-0 z-10 flex flex-col justify-center items-center"
     >
       <div
-        class="flex flex-col items-center justify-center gap-2 slider-div border border-white/20 p-5 rounded-2xl w-full]"
+        class="flex flex-col items-center justify-center md:gap-2 gap-1 slider-div border border-white/20 md:p-5 p-2 rounded-2xl w-full"
       >
         <h2 class="text-white">Audio Controls</h2>
         <div class="flex justify-between items-center w-full gap-5">
@@ -103,14 +105,18 @@
     </div>
 
     <div
-      class="absolute top-1/2 left-50 transform -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col justify-center gap-5"
+      class="absolute md:top-[40%] md:left-10 top-5 z-10 flex flex-col justify-center gap-5"
     >
-      <h1 class="text-6xl text-white font-bold">Visualise <br />your music.</h1>
-      <h2 class="text-white text-lg">THREE JS - JAVASCRIPT - WEBGL</h2>
+      <h1 class="text-4xl md:text-6xl text-white font-bold">
+        Visualise <br />your music.
+      </h1>
+      <h2 class="text-white ms:text-lg text-sm">
+        THREE JS - JAVASCRIPT - WEBGL
+      </h2>
     </div>
 
-    <div class="absolute bottom-5 left-5 z-10 text-white">
-      <h1>
+    <div class="absolute md:bottom-5 md:left-5 bottom-0 left-0 z-10 text-white">
+      <h1 class="">
         Creator:
         <a
           href="https://surajthedev.com"
@@ -127,12 +133,10 @@
         start="0"
         value="0"
         max="1"
-        class="absolute bottom-5 left-1/2 transform -translate-x-1/2 w-1/2 h-2 rounded-full"
+        class="absolute md:bottom-5 bottom-1/4 left-1/2 transform -translate-x-1/2 w-1/2 h-2 rounded-full"
       />
     </div>
-    <!-- <script type="module" src="./scripts/rotating-cube.js"></script> -->
-    <!-- <script type="module" src="./scripts/drawing-lines.js"></script> -->
+
     <script type="module" src="./scripts/audio-reactive-sphere.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </body>
 </html>

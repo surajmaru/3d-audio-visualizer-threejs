@@ -82,3 +82,15 @@
   background: white;
   border-radius: 999px;
 }
+
+@media (max-width: 600px) {
+  .custom-slider {
+    -webkit-appearance: none; /* Override default styling */
+    appearance: none;
+    width: 100px;
+    height: 2px; /* Track thickness */
+    background: #ddd; /* Track background color */
+    border-radius: 4px;
+    outline: none;
+  }
+}

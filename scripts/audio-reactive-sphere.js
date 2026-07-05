@@ -32,7 +32,30 @@ const wire = new THREE.Mesh(
 
 scene.add(wire);
 
-camera.position.z = 5;
+let cameraRadius;
+// let cameraRadius = 5;
+// // camera.position.z = 5;
+
+// if (window.innerWidth < 600) {
+//   cameraRadius = 10;
+// }
+
+function updateCameraRadius() {
+  cameraRadius = window.innerWidth < 1000 ? 8 : 5;
+  console.log(window.innerWidth);
+  console.log(cameraRadius);
+}
+
+updateCameraRadius();
+
+window.addEventListener("resize", () => {
+  updateCameraRadius();
+
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
 
 // particles
 const particleCount = 6000;
@@ -271,8 +294,8 @@ function animate(time) {
   //   camera rotate
   const radius = 5;
   const speed = 0.15; // lower = slower
-  camera.position.x = Math.cos(timeSeconds * speed) * radius;
-  camera.position.z = Math.sin(timeSeconds * speed) * radius;
+  camera.position.x = Math.cos(timeSeconds * speed) * cameraRadius;
+  camera.position.z = Math.sin(timeSeconds * speed) * cameraRadius;
   camera.lookAt(0, 0, 0);
 
   renderer.render(scene, camera);
@@ -282,8 +305,11 @@ function animate(time) {
     const currentTime =
       sound.context.currentTime - sound._startedAt + sound._progress;
     const duration = sound.buffer?.duration;
-    const progress = duration ? currentTime / duration : 0;
-    progressBar.value = progress;
+    // const progress = duration ? currentTime / duration : 0;
+    // progressBar.value = progress;
+    if (duration) {
+      progressBar.value = (currentTime % duration) / duration;
+    }
   } else {
     progressBar.value = 0;
   }
