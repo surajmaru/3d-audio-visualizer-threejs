@@ -121,7 +121,8 @@ input.addEventListener("change", () => {
   playPauseBtn.textContent = "PLAY";
 
   const file = input.files[0];
-  fileText.textContent = file.name;
+  fileText.textContent =
+    file.name.slice(0, 10) + (file.name.length > 10 ? "..." : "");
 
   const url = URL.createObjectURL(file);
 
