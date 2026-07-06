@@ -1,8 +1,11 @@
 import * as THREE from "three";
+import { color } from "three/src/nodes/tsl/TSLCore.js";
 
 // setup
 const scene = new THREE.Scene();
+// scene.background = new THREE.Color(0xa9a9a9);
 const camera = new THREE.PerspectiveCamera(
+  //   140,
   75,
   window.innerWidth / window.innerHeight,
   0.1,
@@ -14,7 +17,9 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-const geometry = new THREE.SphereGeometry(2, 10, 10);
+// const geometry = new THREE.SphereGeometry(2, 10, 10);
+const geometry = new THREE.TorusGeometry(2, 10, 10);
+// const geometry = new THREE.SphereGeometry(2, 22, 22);
 const positions = geometry.attributes.position;
 const originalPositions = positions.array.slice();
 const material = new THREE.MeshBasicMaterial({ color: 0xa9a9a9 });
@@ -314,6 +319,14 @@ function animate(time) {
   } else {
     progressBar.value = 0;
   }
+
+  //   sphere color change
+  //   const bgColor = new THREE.Color(bass, mid, treble);
+  //   if (sound.isPlaying) {
+  //     wire.material.color = bgColor;
+  //   } else {
+  //     wire.material.color = new THREE.Color(0xa9a9a9);
+  //   }
 }
 
 renderer.setAnimationLoop(animate);
